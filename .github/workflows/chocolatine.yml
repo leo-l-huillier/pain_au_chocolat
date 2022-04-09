@@ -37,8 +37,5 @@ jobs:
               echo "::error file=$FILE,line=1,endLine=0,title=Unwanted file detected::$FILE"
               ILLEGAL_FILES_FOUND=1
             done
-            
-      - name: ok 
-        rules:
             - if: 'ILLEGAL_FILES_FOUND = 1'
             allow_failure: true
