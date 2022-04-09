@@ -38,4 +38,5 @@ jobs:
               ILLEGAL_FILES_FOUND=1
             done
              - if: 'ILLEGAL_FILES_FOUND = 1'
+             echo "::error Filename $filename doesn't match possible files" && exit 1 ; done
               allow_failure: true
