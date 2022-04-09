@@ -38,7 +38,7 @@ jobs:
               ILLEGAL_FILES_FOUND=1
             done
             
-      - name: y'a un truc qui vas pas 
+      - name: ok 
         rules:
             - if: 'ILLEGAL_FILES_FOUND = 1'
             allow_failure: true
