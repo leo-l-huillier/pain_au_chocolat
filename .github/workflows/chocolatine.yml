@@ -36,9 +36,9 @@ jobs:
             do
               echo "::error file=$FILE,line=1,endLine=0,title=Unwanted file detected::$FILE"
               ILLEGAL_FILES_FOUND=1
+            done
+            
       - name: y'a un truc qui vas pas 
-        run: |
-        - if: 'ILLEGAL_FILES_FOUND = 1'
-        #echo "::error Filename $filename doesn't match possible files" && exit 1 ; done
-         allow_failure: true
-         done
+        rules:
+            - if: 'ILLEGAL_FILES_FOUND = 1'
+            allow_failure: true
