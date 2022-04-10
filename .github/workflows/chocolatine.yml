@@ -46,7 +46,7 @@ jobs:
              COMPILATION=0
              for FILE in ${{ env.EXECUTABLES}}
              do
-               ./$FILE
+               run: $FILE
                COMPILATION=echo $?
              done
 
