@@ -44,7 +44,8 @@ jobs:
         run: make clean
       - name: test_compilation
         run: |
-             for FILE in ${{ env.EXECUTABLES}}
+             COMPIL="$(find -iname "${{ env.EXECUTABLES}}")"
+             for FILE in COMPIL
              do
                -if ![ -f $FILE -a -x $FILE ]
                  exit 1
