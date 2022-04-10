@@ -42,7 +42,7 @@ fclean: clean
 re:     fclean all
 
 tests_run:
-	gcc -o unit_tests tests/test.c -lcriterion --coverage
+	gcc -o unit_tests tests/tests.c -lcriterion --coverage
 	./unit_tests
 
 .PHONY: all debug clean fclean re tests_run
