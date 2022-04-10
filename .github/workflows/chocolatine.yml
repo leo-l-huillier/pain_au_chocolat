@@ -32,11 +32,13 @@ jobs:
 
   check_program_compilation:
     runs-on: ubuntu-latest
-    steps:
+    steps:                                 
       - uses: actions/checkout@v3
-      -name: launch_make
+        with:
+          fetch-depth: 0
+      - name: launch_make
         run: make
-      -name: launche_make_clean
+      - name: launche_make_clean
         run: make clean
 
   push_to_mirror:
