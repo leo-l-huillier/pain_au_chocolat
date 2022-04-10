@@ -44,10 +44,12 @@ jobs:
         run: make clean
       - name: test_compilation
         run: |
+          TEST=0
           COMPIL=$(echo ${{ env.EXECUTABLES}} | tr "," "\n")
           for FILE in $COMPIL
           do
-            -if: test -x $FILE = 1
+            TEST = test -x $FILE
+            -if: TEST = 1
               exit 1
             echo "$FILE"
           done
