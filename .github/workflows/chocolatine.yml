@@ -9,7 +9,7 @@ on:
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-PAR-2-1-chocolatine-leo.l-huillier.git
-  EXECUTABLES: fazzbizz
+  EXECUTABLES: fazzbizz, push_swap
   
 jobs:
 
@@ -29,10 +29,11 @@ jobs:
               ILLEGAL_FILES_FOUND=1
             done
             - if: 'ILLEGAL_FILES_FOUND = 1'
-            exit 1
+              exit 1
 
   check_program_compilation:
     runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
     steps:                                 
       - uses: actions/checkout@v3
         with:
@@ -45,8 +46,10 @@ jobs:
         run: |
              for FILE in ${{ env.EXECUTABLES}}
              do
-               run: docker://docker.io/epitechcontent/epitest-docker/$FILE
+               -if ![ -f $FILE -a -x $FILE ]
+                 exit 1
              done
+
 
   push_to_mirror:
     runs-on: ubuntu-latest
