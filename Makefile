@@ -41,9 +41,8 @@ fclean: clean
 
 re:     fclean all
 
-##penser a mettre les fichier a compiler pour les tests
 tests_run:
-	@gcc -o unit_tests tests/test.c -lcriterion --coverage
+	gcc -o unit_tests tests/test.c -lcriterion --coverage
 	./unit_tests
 
 .PHONY: all debug clean fclean re tests_run
