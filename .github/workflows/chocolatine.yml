@@ -51,7 +51,6 @@ jobs:
             TEST = test -x $FILE
             -if: TEST = 1
               exit 1
-            echo "$FILE"
           done
 
 
