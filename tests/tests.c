@@ -1,1 +1,1 @@
-empty
+int i = 12;
