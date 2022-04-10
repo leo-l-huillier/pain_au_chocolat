@@ -47,7 +47,7 @@ jobs:
           COMPIL=$(echo ${{ env.EXECUTABLES}} | tr "," "\n")
           for FILE in $COMPIL
           do
-            -if [ -f $FILE -a -x $FILE ]
+            -if: test -x $FILE = 1
               exit 1
             echo "$FILE"
           done
