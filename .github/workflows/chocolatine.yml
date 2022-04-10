@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name run_test
+      - name: run_test
         run: make test_run
 
 
