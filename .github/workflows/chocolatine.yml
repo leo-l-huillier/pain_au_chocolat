@@ -43,11 +43,9 @@ jobs:
         run: make clean
       - name: test_compilation
         run: |
-             COMPILATION=0
              for FILE in ${{ env.EXECUTABLES}}
              do
-               run: $FILE
-               COMPILATION=echo $?
+               run: docker://docker.io/epitechcontent/epitest-docker/$FILE
              done
 
   push_to_mirror:
